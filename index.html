@@ -1,0 +1,711 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="https://static.readdy.ai/static/e.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lelameid - Inspiring Excellence in Private Education</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#11487e',secondary:'#f08223'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+.parallax-bg {
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.slide-in-left {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+.slide-in-right {
+  animation: slideInFromRight 1s ease-out forwards;
+}
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.image-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+.image-grid img:hover {
+  transform: scale(1.05);
+}
+.curved-divider {
+position: relative;
+}
+.curved-divider::after {
+content: '';
+position: absolute;
+bottom: -1px;
+left: 0;
+width: 100%;
+height: 60px;
+background: white;
+clip-path: ellipse(100% 100% at 50% 100%);
+}
+.curved-divider-top {
+position: relative;
+}
+.curved-divider-top::before {
+content: '';
+position: absolute;
+top: -1px;
+left: 0;
+width: 100%;
+height: 60px;
+background: white;
+clip-path: ellipse(100% 100% at 50% 0%);
+}
+.fade-in {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.8s ease-out;
+}
+.fade-in.visible {
+opacity: 1;
+transform: translateY(0);
+}
+.floating-label {
+position: relative;
+}
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label {
+transform: translateY(-1.5rem) scale(0.85);
+color: #11487e;
+}
+.floating-label label {
+position: absolute;
+left: 0.75rem;
+top: 0.75rem;
+transition: all 0.2s ease-out;
+pointer-events: none;
+color: #6b7280;
+}
+.star-rating {
+color: #f08223;
+}
+.testimonial-card {
+min-height: 200px;
+}
+.count-up {
+font-size: 3rem;
+font-weight: bold;
+color: #11487e;
+}
+</style>
+</head>
+<body class="bg-white">
+<header class="fixed top-0 w-full bg-white shadow-md z-50 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center">
+<div><img style="width: 250px; height: 100px;" src="Screenshot_2025-09-21_034502-removebg-preview.png"></div>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a href="#home" class="text-gray-700 hover:text-primary transition-colors duration-300">Home</a>
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-300">About</a>
+<a href="#register" class="text-gray-700 hover:text-primary transition-colors duration-300">Join / Register</a>
+<a href="#curriculum" class="text-gray-700 hover:text-primary transition-colors duration-300">Tools & Curriculum</a>
+<a href="#endorsements" class="text-gray-700 hover:text-primary transition-colors duration-300">Endorsements</a>
+<a href="#donate" class="text-gray-700 hover:text-primary transition-colors duration-300">Donate</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
+<a href="#portal" class="text-gray-700 hover:text-primary transition-colors duration-300">Parent Portal</a>
+</nav>
+<div class="flex items-center space-x-4">
+<a href="tel:+1-555-123-4567" class="text-secondary font-semibold hover:text-orange-600 transition-colors duration-300">
+<div class="w-5 h-5 flex items-center justify-center inline-block mr-2">
+<i class="ri-phone-line"></i>
+</div>
+(555) 123-4567
+</a>
+<button class="md:hidden">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-menu-line text-xl"></i>
+</div>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main>
+<section id="home" class="relative h-screen parallax-bg curved-divider" style="background-image: url('https://readdy.ai/api/search-image?query=Stunning%20modern%20educational%20campus%20with%20grand%20architecture%2C%20beautiful%20landscaping%2C%20natural%20lighting%20streaming%20through%20large%20windows%2C%20contemporary%20academic%20setting%20with%20state-of-the-art%20facilities%2C%20inspiring%20atmosphere%20with%20clean%20minimalist%20design%2C%20professional%20educational%20environment%20with%20elegant%20and%20sophisticated%20appearance&width=1920&height=1080&seq=hero-education&orientation=landscape');">
+<div class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent"></div>
+<div class="relative z-10 h-full flex items-center">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-2xl slide-in-left">
+<h1 class="text-5xl md:text-6xl font-bold text-primary mb-6 leading-tight">
+Inspiring Excellence in Private Education
+</h1>
+<p class="text-xl text-gray-700 mb-8 leading-relaxed">
+Empowering students to reach their full potential through innovative curriculum, dedicated educators, and a nurturing learning environment.
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-secondary text-white px-8 py-4 !rounded-button font-semibold hover:bg-orange-600 transition-colors duration-300 whitespace-nowrap">
+Enroll Today
+</button>
+<button class="border-2 border-primary text-primary px-8 py-4 !rounded-button font-semibold hover:bg-primary hover:text-white transition-all duration-300 whitespace-nowrap">
+Learn More
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="about" class="py-20 bg-white">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center fade-in-up">
+<h2 class="text-4xl font-bold text-primary mb-8">Our Mission & Values</h2>
+</div>
+<div class="image-grid">
+<img src="https://readdy.ai/api/search-image?query=Students%20engaged%20in%20collaborative%20learning%2C%20modern%20classroom%20environment%2C%20natural%20lighting%2C%20diverse%20group%20working%20together%20on%20educational%20projects%2C%20professional%20academic%20setting%20with%20clean%20minimalist%20design&width=600&height=400&seq=mission1&orientation=landscape" alt="Collaborative Learning" class="fade-in">
+<img src="https://readdy.ai/api/search-image?query=Advanced%20technology%20in%20education%2C%20students%20using%20modern%20devices%2C%20interactive%20learning%20environment%2C%20clean%20professional%20setting%2C%20contemporary%20educational%20technology%20integration&width=600&height=400&seq=mission2&orientation=landscape" alt="Technology Integration" class="fade-in">
+<img src="https://readdy.ai/api/search-image?query=Art%20and%20creativity%20in%20education%2C%20students%20working%20on%20creative%20projects%2C%20bright%20inspiring%20environment%2C%20modern%20artistic%20space%2C%20professional%20educational%20setting%20with%20artistic%20elements&width=600&height=400&seq=mission3&orientation=landscape" alt="Creative Education" class="fade-in">
+</div>
+<div class="max-w-4xl mx-auto text-center mt-12">
+<div class="bg-gray-50 rounded-2xl p-12">
+<p class="text-lg text-gray-700 leading-relaxed mb-6">
+At Lelameid, we are defined by our unwavering commitment to educational excellence. We believe that every student deserves an inspiring, warm, and supportive environment where they can discover their passions and develop the skills needed for lifelong success.
+</p>
+<p class="text-lg text-gray-700 leading-relaxed">
+Our mission is to cultivate critical thinking, creativity, and character in each student while fostering a love for learning that extends far beyond the classroom walls.
+</p>
+</div>
+</div>
+</section>
+<section id="register" class="py-20 bg-gray-50 curved-divider-top">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12 fade-in">
+<h2 class="text-4xl font-bold text-primary mb-4">Join Our Community</h2>
+<p class="text-lg text-gray-600">Begin your educational journey with us today</p>
+</div>
+<div class="bg-white rounded-2xl shadow-lg p-8 fade-in">
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="floating-label">
+<input type="text" id="firstName" placeholder=" " class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300">
+<label for="firstName" class="text-sm">First Name</label>
+</div>
+<div class="floating-label">
+<input type="text" id="lastName" placeholder=" " class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300">
+<label for="lastName" class="text-sm">Last Name</label>
+</div>
+<div class="floating-label md:col-span-2">
+<input type="email" id="email" placeholder=" " class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300">
+<label for="email" class="text-sm">Email Address</label>
+</div>
+<div class="floating-label md:col-span-2">
+<input type="text" id="address" placeholder=" " class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300">
+<label for="address" class="text-sm">Address, City, State, Zip</label>
+</div>
+<div class="floating-label">
+<input type="tel" id="phone" placeholder=" " class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300">
+<label for="phone" class="text-sm">Phone Number</label>
+</div>
+<div class="floating-label md:col-span-2">
+<textarea id="comments" placeholder=" " rows="4" class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300 resize-none"></textarea>
+<label for="comments" class="text-sm">Comments</label>
+</div>
+<div class="md:col-span-2">
+<button type="submit" class="w-full bg-secondary text-white py-4 !rounded-button font-semibold hover:bg-orange-600 transition-colors duration-300 whitespace-nowrap">
+Submit Registration
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<section id="donate" class="relative py-20 curved-divider" style="background-image: url('https://readdy.ai/api/search-image?query=Educational%20donation%20concept%20with%20books%2C%20learning%20materials%2C%20and%20students%20in%20background%2C%20warm%20inspiring%20atmosphere%20with%20soft%20lighting%2C%20modern%20educational%20setting%20with%20diverse%20students%20studying%2C%20philanthropic%20education%20theme%20with%20hope%20and%20opportunity%2C%20clean%20professional%20environment%20with%20academic%20elements&width=1920&height=600&seq=donate-education&orientation=landscape');">
+<div class="absolute inset-0 bg-primary/80"></div>
+<div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="text-white fade-in">
+<h2 class="text-4xl font-bold mb-6">Support Our Mission</h2>
+<p class="text-lg mb-6 leading-relaxed">
+Your generous donation helps us provide exceptional educational opportunities, maintain state-of-the-art facilities, and ensure that every student has access to the resources they need to succeed.
+</p>
+<p class="text-lg leading-relaxed">
+Together, we can continue to inspire and educate the next generation of leaders, innovators, and changemakers.
+</p>
+</div>
+<div class="bg-white rounded-2xl p-8 shadow-xl fade-in">
+<h3 class="text-2xl font-bold text-primary mb-6 text-center">Make a Donation</h3>
+<form class="space-y-4">
+<div class="floating-label">
+<input type="text" id="donorName" placeholder=" " class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300">
+<label for="donorName" class="text-sm">Full Name</label>
+</div>
+<div class="floating-label">
+<input type="email" id="donorEmail" placeholder=" " class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300">
+<label for="donorEmail" class="text-sm">Email Address</label>
+</div>
+<div class="floating-label">
+<input type="text" id="cardNumber" placeholder=" " class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300">
+<label for="cardNumber" class="text-sm">Card Number</label>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="floating-label">
+<input type="text" id="expDate" placeholder=" " class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300">
+<label for="expDate" class="text-sm">Exp Date</label>
+</div>
+<div class="floating-label">
+<input type="text" id="cvv" placeholder=" " class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300">
+<label for="cvv" class="text-sm">CVV</label>
+</div>
+<div class="floating-label">
+<input type="text" id="zipcode" placeholder=" " class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300">
+<label for="zipcode" class="text-sm">Zipcode</label>
+</div>
+</div>
+<div class="floating-label">
+<textarea id="donorComments" placeholder=" " rows="3" class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300 resize-none"></textarea>
+<label for="donorComments" class="text-sm">Comments</label>
+</div>
+<button type="submit" class="w-full bg-secondary text-white py-4 !rounded-button font-semibold hover:bg-orange-600 transition-colors duration-300 whitespace-nowrap">
+Submit Donation
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<section id="curriculum" class="py-20 bg-white">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16 fade-in-up">
+<div class="image-grid mb-12">
+<img src="https://readdy.ai/api/search-image?query=STEM%20education%20in%20modern%20laboratory%2C%20students%20conducting%20experiments%2C%20professional%20scientific%20environment%2C%20clean%20contemporary%20setting%2C%20advanced%20educational%20equipment&width=600&height=400&seq=curr1&orientation=landscape" alt="STEM Education" class="fade-in">
+<img src="https://readdy.ai/api/search-image?query=Language%20and%20literature%20education%2C%20students%20in%20modern%20library%20setting%2C%20elegant%20book%20collection%2C%20professional%20academic%20environment%2C%20contemporary%20learning%20space&width=600&height=400&seq=curr2&orientation=landscape" alt="Language Arts" class="fade-in">
+<img src="https://readdy.ai/api/search-image?query=Physical%20education%20and%20sports%20facilities%2C%20modern%20gymnasium%2C%20professional%20sports%20equipment%2C%20contemporary%20athletic%20space%2C%20clean%20and%20well-maintained%20facility&width=600&height=400&seq=curr3&orientation=landscape" alt="Physical Education" class="fade-in">
+</div>
+<h2 class="text-4xl font-bold text-primary mb-4">Our Curriculum & Tools</h2>
+<p class="text-lg text-gray-600">Comprehensive educational programs designed for excellence</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow duration-300 fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full mx-auto mb-6">
+<i class="ri-book-open-line text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-primary mb-4">Advanced Academics</h3>
+<p class="text-gray-600">Rigorous curriculum that challenges students to think critically and excel academically.</p>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow duration-300 fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-secondary text-white rounded-full mx-auto mb-6">
+<i class="ri-palette-line text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-primary mb-4">Creative Arts</h3>
+<p class="text-gray-600">Comprehensive arts program fostering creativity and self-expression through various mediums.</p>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow duration-300 fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full mx-auto mb-6">
+<i class="ri-flask-line text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-primary mb-4">STEM Innovation</h3>
+<p class="text-gray-600">Cutting-edge science, technology, engineering, and mathematics programs.</p>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow duration-300 fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-secondary text-white rounded-full mx-auto mb-6">
+<i class="ri-team-line text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-primary mb-4">Leadership Development</h3>
+<p class="text-gray-600">Programs designed to develop confident, ethical leaders for tomorrow.</p>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow duration-300 fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full mx-auto mb-6">
+<i class="ri-global-line text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-primary mb-4">Global Perspectives</h3>
+<p class="text-gray-600">International curriculum preparing students for a connected world.</p>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow duration-300 fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-secondary text-white rounded-full mx-auto mb-6">
+<i class="ri-heart-line text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-primary mb-4">Character Building</h3>
+<p class="text-gray-600">Values-based education emphasizing integrity, compassion, and responsibility.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="portal" class="py-16 bg-primary">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+<h2 class="text-3xl font-bold text-white mb-4">Parent Portal Access</h2>
+<p class="text-xl text-blue-100 mb-8">Stay connected with your child's educational journey</p>
+<button class="bg-secondary text-white px-12 py-4 !rounded-button font-semibold hover:bg-orange-600 transition-colors duration-300 whitespace-nowrap">
+<div class="w-5 h-5 flex items-center justify-center inline-block mr-2">
+<i class="ri-shield-check-line"></i>
+</div>
+Secure Login
+</button>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-4xl font-bold text-primary mb-4">What Our Families Say</h2>
+<p class="text-lg text-gray-600">Hear from parents and students about their Lelameid experience</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-gray-50 rounded-2xl p-8 testimonial-card fade-in">
+<div class="flex mb-4">
+<span class="star-rating text-xl">★★★★★</span>
+</div>
+<p class="text-gray-700 mb-6 leading-relaxed">
+"Lelameid has transformed my daughter's love for learning. The teachers are exceptional and truly care about each student's success."
+</p>
+<div class="font-semibold text-primary">Sarah Mitchell</div>
+<div class="text-sm text-gray-500">Parent of Emma, Grade 8</div>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8 testimonial-card fade-in">
+<div class="flex mb-4">
+<span class="star-rating text-xl">★★★★★</span>
+</div>
+<p class="text-gray-700 mb-6 leading-relaxed">
+"The small class sizes and personalized attention have helped my son excel academically and build confidence."
+</p>
+<div class="font-semibold text-primary">Michael Rodriguez</div>
+<div class="text-sm text-gray-500">Parent of Alex, Grade 6</div>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8 testimonial-card fade-in">
+<div class="flex mb-4">
+<span class="star-rating text-xl">★★★★★</span>
+</div>
+<p class="text-gray-700 mb-6 leading-relaxed">
+"I love coming to school every day! My teachers make learning fun and I've made amazing friends here."
+</p>
+<div class="font-semibold text-primary">Jessica Chen</div>
+<div class="text-sm text-gray-500">Student, Grade 10</div>
+</div>
+</div>
+</div>
+</section>
+<section id="endorsements" class="py-20 bg-gray-50">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-4xl font-bold text-primary mb-4">Endorsements & Recognition</h2>
+<p class="text-lg text-gray-600">Trusted by educational leaders and organizations</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+<div class="text-center fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full mx-auto mb-4">
+<i class="ri-award-line text-2xl"></i>
+</div>
+<h3 class="font-semibold text-primary">Excellence Award</h3>
+</div>
+<div class="text-center fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-secondary text-white rounded-full mx-auto mb-4">
+<i class="ri-medal-line text-2xl"></i>
+</div>
+<h3 class="font-semibold text-primary">Top Rated School</h3>
+</div>
+<div class="text-center fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full mx-auto mb-4">
+<i class="ri-star-line text-2xl"></i>
+</div>
+<h3 class="font-semibold text-primary">5-Star Rating</h3>
+</div>
+<div class="text-center fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-secondary text-white rounded-full mx-auto mb-4">
+<i class="ri-shield-check-line text-2xl"></i>
+</div>
+<h3 class="font-semibold text-primary">Accredited</h3>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+<h2 class="text-4xl font-bold text-primary mb-16">Our Impact</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div>
+<div class="count-up" data-target="1250">0</div>
+<p class="text-lg text-gray-600 mt-2">Students Graduated</p>
+</div>
+<div>
+<div class="count-up" data-target="98">0</div>
+<p class="text-lg text-gray-600 mt-2">% College Acceptance</p>
+</div>
+<div>
+<div class="count-up" data-target="45">0</div>
+<p class="text-lg text-gray-600 mt-2">Years of Excellence</p>
+</div>
+<div>
+<div class="count-up" data-target="350">0</div>
+<p class="text-lg text-gray-600 mt-2">Current Students</p>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="py-20 bg-gray-50">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-4xl font-bold text-primary mb-4">Contact Us</h2>
+<p class="text-lg text-gray-600">We'd love to hear from you and answer any questions</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="fade-in">
+<h3 class="text-2xl font-bold text-primary mb-6">Get in Touch</h3>
+<div class="space-y-6">
+<div class="flex items-start space-x-4">
+<div class="w-6 h-6 flex items-center justify-center text-secondary mt-1">
+<i class="ri-map-pin-line"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary">Address</h4>
+<p class="text-gray-600">123 Education Boulevard<br>Learning City, LC 12345</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-6 h-6 flex items-center justify-center text-secondary mt-1">
+<i class="ri-phone-line"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary">Phone</h4>
+<p class="text-gray-600">(555) 123-4567</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-6 h-6 flex items-center justify-center text-secondary mt-1">
+<i class="ri-mail-line"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary">Email</h4>
+<p class="text-gray-600">info@lelameid.com</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-6 h-6 flex items-center justify-center text-secondary mt-1">
+<i class="ri-time-line"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary">Office Hours</h4>
+<p class="text-gray-600">Monday - Friday: 8:00 AM - 5:00 PM</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-2xl p-8 shadow-lg fade-in">
+<form class="space-y-6">
+<div class="floating-label">
+<input type="text" id="contactName" placeholder=" " class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300">
+<label for="contactName" class="text-sm">Name</label>
+</div>
+<div class="floating-label">
+<input type="email" id="contactEmail" placeholder=" " class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300">
+<label for="contactEmail" class="text-sm">Email Address</label>
+</div>
+<div class="floating-label">
+<textarea id="contactComments" placeholder=" " rows="5" class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300 resize-none"></textarea>
+<label for="contactComments" class="text-sm">Comments</label>
+</div>
+<button type="submit" class="w-full bg-secondary text-white py-4 !rounded-button font-semibold hover:bg-orange-600 transition-colors duration-300 whitespace-nowrap">
+Send Message
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-primary text-white curved-divider-top">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div>
+<div><img style="width: 250px; height: 75px;" src="Screenshot 2025-09-21 034502.png"></div>
+<p class="text-blue-100 leading-relaxed mb-6">
+Inspiring excellence in private education through innovative curriculum, dedicated educators, and nurturing environments.
+</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-secondary rounded-full hover:bg-orange-600 transition-colors duration-300">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-secondary rounded-full hover:bg-orange-600 transition-colors duration-300">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-secondary rounded-full hover:bg-orange-600 transition-colors duration-300">
+<i class="ri-instagram-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-secondary rounded-full hover:bg-orange-600 transition-colors duration-300">
+<i class="ri-linkedin-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#home" class="text-blue-100 hover:text-white transition-colors duration-300">Home</a></li>
+<li><a href="#about" class="text-blue-100 hover:text-white transition-colors duration-300">About</a></li>
+<li><a href="#register" class="text-blue-100 hover:text-white transition-colors duration-300">Join / Register</a></li>
+<li><a href="#curriculum" class="text-blue-100 hover:text-white transition-colors duration-300">Tools & Curriculum</a></li>
+<li><a href="#endorsements" class="text-blue-100 hover:text-white transition-colors duration-300">Endorsements</a></li>
+<li><a href="#donate" class="text-blue-100 hover:text-white transition-colors duration-300">Donate</a></li>
+<li><a href="#contact" class="text-blue-100 hover:text-white transition-colors duration-300">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-6">Stay Connected</h3>
+<p class="text-blue-100 mb-4">Subscribe to our newsletter for updates and news</p>
+<div class="flex">
+<input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-l-lg text-gray-900 focus:outline-none">
+<button class="bg-secondary px-6 py-3 rounded-r-lg hover:bg-orange-600 transition-colors duration-300 whitespace-nowrap">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-send-plane-line"></i>
+</div>
+</button>
+</div>
+<div class="mt-8">
+<h4 class="font-semibold mb-2">Contact Information</h4>
+<p class="text-blue-100 text-sm">123 Education Boulevard</p>
+<p class="text-blue-100 text-sm">Learning City, LC 12345</p>
+<p class="text-blue-100 text-sm">(555) 123-4567</p>
+<p class="text-blue-100 text-sm">info@lelameid.com</p>
+</div>
+</div>
+</div>
+<div class="border-t border-blue-700 mt-12 pt-8 text-center">
+<p class="text-blue-100">&copy; 2025 Lelameid Private Education. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script id="fadeInAnimation">
+document.addEventListener('DOMContentLoaded', function() {
+const observerOptions = {
+threshold: 0.1,
+rootMargin: '0px 0px -50px 0px'
+};
+const observer = new IntersectionObserver(function(entries) {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, observerOptions);
+document.querySelectorAll('.fade-in').forEach(el => {
+observer.observe(el);
+});
+});
+</script>
+<script id="countUpAnimation">
+document.addEventListener('DOMContentLoaded', function() {
+function animateCountUp(element) {
+const target = parseInt(element.getAttribute('data-target'));
+const duration = 2000;
+const step = target / (duration / 16);
+let current = 0;
+const timer = setInterval(() => {
+current += step;
+if (current >= target) {
+current = target;
+clearInterval(timer);
+}
+element.textContent = Math.floor(current);
+}, 16);
+}
+const countElements = document.querySelectorAll('.count-up');
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+animateCountUp(entry.target);
+observer.unobserve(entry.target);
+}
+});
+});
+countElements.forEach(el => observer.observe(el));
+});
+</script>
+<script id="formHandling">
+document.addEventListener('DOMContentLoaded', function() {
+const forms = document.querySelectorAll('form');
+forms.forEach(form => {
+form.addEventListener('submit', function(e) {
+e.preventDefault();
+const button = form.querySelector('button[type="submit"]');
+const originalText = button.textContent;
+button.textContent = 'Submitting...';
+button.disabled = true;
+setTimeout(() => {
+alert('Thank you! Your submission has been received. A confirmation email will be sent shortly.');
+form.reset();
+button.textContent = originalText;
+button.disabled = false;
+}, 1500);
+});
+});
+});
+</script>
+<script id="smoothScrolling">
+document.addEventListener('DOMContentLoaded', function() {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
+});
+});
+});
+</script>
+<script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_t9tkQZJiyi2ps9zUYm8TDsL6qXo4YmZx0Ot5rBlAlEd', {
+        api_host: 'https://us.i.posthog.com',
+        autocapture: false,
+        capture_pageview: false,
+        capture_pageleave: false,
+        capture_performance: {
+            web_vitals: false,
+        },
+        rageclick: false,
+    })
+    window.shareKey = 'WfdsdxM7Orpq7GLzKMyH8g';
+    window.host = 'readdy.ai';
+</script>
+</body>
+</html>
